@@ -1,0 +1,120 @@
+/* style.css */
+
+/* Global Settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Layout */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+}
+
+header ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Hero Section (Home Page) */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    color: #666;
+}
+
+/* Projects Section */
+.projects ul {
+    list-style: none;
+}
+
+.projects ul li {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.projects ul li h2 {
+    font-size: 2rem;
+}
+
+.projects ul li p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* Blog Section */
+.blog ul {
+    list-style: none;
+}
+
+.blog ul li {
+    background-color: #fff;
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog ul li h2 {
+    font-size: 2rem;
+}
+
+.blog ul li p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #333;
+    color: #fff;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
