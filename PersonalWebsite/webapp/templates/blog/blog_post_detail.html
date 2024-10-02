@@ -8,6 +8,8 @@
     <section class="blog-post-detail">
         <h1>{{ post.title }}</h1>
         <p>Published on {{ post.created_at }}</p>
-        <p>{{ post.content}}</p>
+        <div>
+            {{ content_with_calculator|safe }}
+        </div>
     </section>
 {% endblock %}

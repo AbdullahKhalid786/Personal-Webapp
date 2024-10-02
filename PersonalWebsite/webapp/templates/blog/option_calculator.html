@@ -1,0 +1,13 @@
+<div class="option-calculator">
+    <h3>Calculate Option Price</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}  <!-- Renders the form as paragraphs -->
+        <button type="submit">Calculate Option Price</button>
+    </form>
+    
+    {% if option_price %}
+        <p>The calculated option price is: {{ option_price }}</p>
+    {% endif %}
+</div>
+

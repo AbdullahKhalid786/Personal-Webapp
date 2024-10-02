@@ -60,6 +60,7 @@ main {
     background-color: #03001500;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    min-height: 800px;
 }
 
 .hero h1 {
@@ -135,7 +136,7 @@ footer {
     padding: 1rem 0;
     background-color: #333;
     color: #fff;
-    position: absolute;
+    
     width: 100%;
     bottom: 0;
 }
