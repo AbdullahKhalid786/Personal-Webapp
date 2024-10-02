@@ -14,7 +14,7 @@ class Project(models.Model):
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)  # Blog post title
     summary = models.TextField()  # Short summary for the blog post
-    content = models.TextField()  # Full blog content
+    content = models.TextField(default='')  # Full blog content
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp for when the post was created
     updated_at = models.DateTimeField(auto_now=True)  # Timestamp for when the post was last updated
 

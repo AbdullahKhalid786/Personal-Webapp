@@ -8,11 +8,19 @@
 }
 
 body {
+    background-image: url("abstract-lines-dark-4k-mg-1920x1080.jpg");
+
+  
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
+    color: #fffffff9;  
     line-height: 1.6;
     margin: 0;
+    height: 100vh;
 }
 
 /* Layout */
@@ -42,20 +50,21 @@ main {
     padding: 2rem;
     max-width: 1200px;
     margin: auto;
+    background-color: rgba(0, 255, 255, 0);
 }
 
 /* Hero Section (Home Page) */
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background-color: #fff;
+    background-color: #03001500;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .hero h1 {
-    font-size: 3rem;
-    color: #333;
+    font-size: 500%;
+    color: #ffffff;
 }
 
 .hero p {
@@ -70,11 +79,12 @@ main {
 }
 
 .projects ul li {
-    background-color: #fff;
-    margin-bottom: 15px;
-    padding: 20px;
-    border-radius: 5px;
+    background-color: hsla(0, 0%, 100%, 0);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.projects h1 {
+    font-size: 2.2rem;
 }
 
 .projects ul li h2 {
@@ -107,6 +117,17 @@ main {
     font-size: 1rem;
     color: #555;
 }
+
+/* Add this to your CSS file */
+.content {
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 
 /* Footer */
 footer {

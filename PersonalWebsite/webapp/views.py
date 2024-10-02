@@ -23,3 +23,7 @@ def blog_post_detail(request, post_id):
     post = BlogPost.objects.get(id=post_id)  # Get the blog post by its ID
     context = {'post': post}
     return render(request, 'blog/blog_post_detail.html', context)
+
+
+def test_view(request):
+    return render(request, 'test_template.html')
