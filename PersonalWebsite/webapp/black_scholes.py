@@ -6,8 +6,8 @@ class BlackScholes:
         self.S = S  # Current stock price
         self.K = K  # Strike price
         self.T = T  # Time to expiration (in years)
-        self.r = r  # Risk-free interest rate
-        self.sigma = sigma  # Volatility of the stock
+        self.r = r/100  # Risk-free interest rate
+        self.sigma = sigma/100  # Volatility of the stock
 
     def d1(self):
         return (np.log(self.S / self.K) + (self.r + self.sigma ** 2 / 2) * self.T) / (self.sigma * np.sqrt(self.T))

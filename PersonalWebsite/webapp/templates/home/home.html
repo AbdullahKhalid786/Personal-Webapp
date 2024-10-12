@@ -2,10 +2,21 @@
 {% extends 'base.html' %}
 
 {% block title %}Home{% endblock %}
+{% load static %}
 
 {% block content %}
-    <section class="hero">
-        <h1>Abdullah Khalid</h1>
-        <p>Exploring my journey in tech, projects, and thoughts through my blog.</p>
-    </section>
+
+<section class="hero">
+    <div class="parallax">
+        <img class="backdrop" src="{% static '/stars-1845140_1920.jpg' %}" alt="Backdrop">
+        <img class="moon" src="{% static '/moon.png' %}" alt="Moon">
+        <img class="stochastic" src="{% static '/stoch.png' %}" alt="Stochastic">
+        <img class="bayes" src="{% static '/bayes theorem.png' %}" alt="">
+        <img class="black-scholes" src="{% static '/black-scholes-merton-model.png' %}" alt="">
+
+    </div>
+    <h1>Abdullah Khalid</h1>
+    <p>Exploring my journey in tech, projects, and thoughts through my blog.</p>
+</section>
+
 {% endblock %}
