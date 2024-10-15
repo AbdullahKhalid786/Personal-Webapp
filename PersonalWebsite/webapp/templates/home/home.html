@@ -5,18 +5,31 @@
 {% load static %}
 
 {% block content %}
-
-<section class="hero">
-    <div class="parallax">
-        <img class="backdrop" src="{% static '/stars-1845140_1920.jpg' %}" alt="Backdrop">
-        <img class="moon" src="{% static '/moon.png' %}" alt="Moon">
-        <img class="stochastic" src="{% static '/stoch.png' %}" alt="Stochastic">
-        <img class="bayes" src="{% static '/bayes theorem.png' %}" alt="">
-        <img class="black-scholes" src="{% static '/black-scholes-merton-model.png' %}" alt="">
-
+<section class="homePage">
+    <div class="hero">
+        <div class="heading">
+            <h1>Abdullah Khalid</h1>
+        </div>
     </div>
-    <h1>Abdullah Khalid</h1>
-    <p>Exploring my journey in tech, projects, and thoughts through my blog.</p>
+    <div class="project-menu">
+        <h1>Projects</h1>
+        <div class="project-grids">
+            <div class="logo">
+                <h1>H1</h1>
+            </div>
+            <div class="logo">
+                <h1>H1</h1>
+            </div>
+            <div class="logo">
+                <h1>H1</h1>
+            </div>
+            <div class="logo">
+                <h1>H1</h1>
+            </div>
+        </div>
+    </div>
 </section>
-
 {% endblock %}
+
+<!-- Place the script here -->
+<script src="{% static 'parallax.js' %}"></script>
