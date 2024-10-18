@@ -50,8 +50,8 @@ main {
     flex-flow: column nowrap;
     margin: auto;
     background-color: rgb(0, 0, 0);
-    flex-grow: 1; /* Main will fill the remaining space in the body */
-    width: 100%; /* Ensure main takes full width */
+    flex-grow: 1; 
+    width: 100%; 
     overflow: auto; 
 }
 
@@ -76,6 +76,23 @@ main {
     align-content: center;
 }
 
+.about{
+    display: flex;
+    flex-flow: row;
+    height: 30%;
+}
+
+.my_image{
+    background-color: #fff;
+    width: 40%;
+    max-height: 100%;
+    margin: 50px;
+}
+
+.aboutMe{
+    width: 50%;
+}
+
 /* project menu */
 .project-menu {
     position: relative;
@@ -95,7 +112,18 @@ main {
     height: 200px;
 }
 
+.logo{
+    display: flex;
+    width: 30%;
+    height: 50vh;
+    margin: 40px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333;
 
+    justify-content: center;
+    align-items: center;
+}
 
 
 
@@ -161,7 +189,7 @@ main {
 
 
 /* Footer */
-footer {
+/* footer {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -171,4 +199,4 @@ footer {
     height: 50px;
     width: 100%;
     bottom: 0;
-}
+} */
