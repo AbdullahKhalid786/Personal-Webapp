@@ -4,18 +4,55 @@
 {% block title %}Home{% endblock %}
 {% load static %}
 
+{% block header %}
+<!-- This nav has the scroll animation -->
+ <header class="nav-hidden">
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+        </ul>
+    </nav>
+ </header>
+{% endblock %}
+
 {% block content %}
 <section class="homePage">
     <div class="hero">
+        <div class="background">
+            <video autoplay muted loop id="myVideo">
+                <source src="{% static 'LorenzAttractor.mp4' %}" type="video/mp4">
+            </video>
+        </div>
         <div class="heading">
-            <h1>Abdullah Khalid</h1>
+            <h1><span>ABDULLAH</span><span> KHALID</span></h1>
         </div>
     </div>
+
+    <div class="project-menu">
+        <h1>PROJECTS</h1>
+        <div class="project-grids">
+            <div class="logo hidden">
+                <h1>H1</h1>
+            </div>
+            <div class="logo hidden">
+                <h1>H1</h1>
+            </div>
+            <div class="logo hidden">
+                <h1>H1</h1>
+            </div>
+            <div class="logo hidden">
+                <h1>H1</h1>
+            </div>
+        </div>
+    </div>
+
     <div class="about">
-        <div class="my_image">
+        <div class="my_image hidden">
             
         </div>
-        <div class="aboutMe">
+        <div class="aboutMe hidden">
             <h2>About me</h2>
             <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod voluptas quis illo fuga suscipit fugit quam, laborum magnam officia ullam exercitationem beatae, quas sapiente quo maiores corporis! Unde, eaque laborum.
@@ -26,25 +63,10 @@
             </p>
         </div>
     </div>
-    <div class="project-menu">
-        <h1>PROJECTS</h1>
-        <div class="project-grids">
-            <div class="logo">
-                <h1>H1</h1>
-            </div>
-            <div class="logo">
-                <h1>H1</h1>
-            </div>
-            <div class="logo">
-                <h1>H1</h1>
-            </div>
-            <div class="logo">
-                <h1>H1</h1>
-            </div>
-        </div>
-    </div>
 </section>
 {% endblock %}
 
-<!-- Place the script here -->
-<script src="{% static 'parallax.js' %}"></script>
+
+{% block scripts %}
+<script defer src="{% static 'js/home.js' %}"></script>
+{% endblock %}

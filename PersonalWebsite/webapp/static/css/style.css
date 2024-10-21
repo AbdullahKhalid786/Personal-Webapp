@@ -1,6 +1,9 @@
 /* style.css */
 
 /* Global Settings */
+::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +13,7 @@ html{
     height: 100%;
 }
 body {
-    background-color: rgb(224, 0, 0);
+    background-color: rgb(0, 0, 0);
     font-family: 'Arial', sans-serif;
     color: #ffffff;  
     display: flex;
@@ -28,6 +31,15 @@ header {
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+}
+
+header.nav-hidden{
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+header.nav-hidden.visible{
+    opacity: 1;
 }
 
 header ul {
@@ -57,43 +69,94 @@ main {
 
 
 /* Hero Section (Home Page) */
+/* Hero section */
 .hero {
+    position: relative;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
- /* Main will fill the remaining space in the body */
     min-height: 100vh;
-    width: 100%; /* Ensure main takes full width * /* Prevent content overflow */
-    background-color: #03001500;
-
+    width: 100%;
+    background-color: transparent;
 }
 
-/* heading */
-.heading{
+/* Heading */
+.heading {
+    color: #8fa8f9;
+    font-size: x-large;
+    position: absolute;
     display: flex;
     justify-content: center;
     align-content: center;
+    overflow: hidden;
+    margin-bottom: 15%;
+    z-index: 1;
+    width: 100%;
+    transition: transform 1.5s ease, opacity 1.5s ease;
 }
 
-.about{
+.heading h1{
+    color: #484848;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
+    cursor: pointer
+  }
+  h1 span{
+    transition: .5s linear
+  }
+  h1:hover span:nth-child(1){
+    margin-right: 5px
+  }
+  h1:hover span:nth-child(1):after{
+    content: " 10001001";
+    transition: ease;
+  }
+  h1:hover span:nth-child(2){
+    margin-left: 20px
+  }
+  h1:hover span{
+    color: #fff;
+    text-shadow: 0 0 5px #fff,
+                 0 0 10px #fff, 
+                 0 0 20px #fff;
+  }
+
+/* Background scaling effect */
+.background {
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+}
+
+.background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* About Section */
+.about {
     display: flex;
     flex-flow: row;
     height: 30%;
 }
 
-.my_image{
+
+.my_image {
     background-color: #fff;
     width: 40%;
     max-height: 100%;
     margin: 50px;
 }
 
-.aboutMe{
+.aboutMe {
     width: 50%;
 }
 
-/* project menu */
+/* Project menu */
 .project-menu {
     position: relative;
     display: flex;
@@ -102,17 +165,21 @@ main {
     align-items: center;
     min-height: 100vh;
     width: 100%;
+
+    transform: translateY(50px);
+    transition: opacity 1.5s ease, transform 1.5s ease;
 }
 
 
-.project-grids{
+/* Project grids */
+.project-grids {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     height: 200px;
 }
 
-.logo{
+.logo {
     display: flex;
     width: 30%;
     height: 50vh;
@@ -120,15 +187,43 @@ main {
     border-radius: 5px;
     background-color: #ffffff;
     color: #333;
-
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 2s, transform 2s;
 }
 
+/* Transition delays for logos */
+.project-grids .logo:nth-child(2) {
+    transition-delay: 200ms;
+}
 
+.project-grids .logo:nth-child(3) {
+    transition-delay: 400ms;
+}
 
+.project-grids .logo:nth-child(4) {
+    transition-delay: 600ms;
+}
 
+.project-grids .logo:nth-child(5) {
+    transition-delay: 800ms;
+}
 
+/* Hidden states */
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 2s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
 
 
 
