@@ -7,7 +7,9 @@ from .black_scholes import BlackScholes  # Import your Black-Scholes class
 
 # Home page view
 def home(request):
-    return render(request, 'home/home.html')
+    posts = BlogPost.objects.all()  # Fetch all blog posts from the database
+    context = {'posts': posts}
+    return render(request, 'home/home.html', context)
 
 # Projects page view
 def projects(request):

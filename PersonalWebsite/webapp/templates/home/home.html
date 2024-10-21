@@ -21,12 +21,16 @@
 <section class="homePage">
     <div class="hero">
         <div class="background">
+            <a class="link-lorenz" href="https://legacy-www.math.harvard.edu/archive/118r_spring_05/handouts/lorentz.pdf" target="_blank">
+                <h1></h1>
+            </a>
             <video autoplay muted loop id="myVideo">
                 <source src="{% static 'LorenzAttractor.mp4' %}" type="video/mp4">
             </video>
+            
         </div>
         <div class="heading">
-            <a href="https://en.wikipedia.org/wiki/Lorenz_system" target="_blank"><h1><span>ABDULLAH</span><span> KHALID</span></h1></a>
+            <a href="https://en.wikipedia.org/wiki/Fine-structure_constant" target="_blank"><h1><span>ABDULLAH</span><span> KHALID</span></h1></a>
         </div>
     </div>
 
@@ -51,18 +55,14 @@
     <div class="project-menu blogs" id="blogg">
         <h1><a href="{% url 'blog' %}">BLOG POSTS</a></h1>
         <div class="project-grids blogs">
-            <div class="logo blogs hidden">
-                <h1>H1</h1>
-            </div>
-            <div class="logo blogs hidden">
-                <h1>H1</h1>
-            </div>
-            <div class="logo blogs hidden">
-                <h1>H1</h1>
-            </div>
-            <div class="logo blogs hidden">
-                <h1>H1</h1>
-            </div>
+            {% for post in posts %}
+                <div class="logo blogs hidden">
+                    <a class="link-blog" href="{{ post.get_absolute_url }}">
+                        <h1>{{ post.title }}</h1>
+                    </a>
+                </div>
+            {% endfor %}
+            
         </div>
     </div>
 
