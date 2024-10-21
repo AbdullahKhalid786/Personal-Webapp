@@ -9,14 +9,14 @@ const observer = new IntersectionObserver((entries) => {
         }
 
         // Debugging logs to ensure the project menu is being observed
-        if (entry.target.classList.contains('project-menu')) {
+        if (entry.target.classList.contains('hero')) {
             console.log('Project menu visibility:', entry.isIntersecting);
 
             // Show/hide navbar based on intersection with project-menu
             if (entry.isIntersecting) {
-                document.querySelector('.nav-hidden').classList.add('visible');
-            } else {
                 document.querySelector('.nav-hidden').classList.remove('visible');
+            } else {
+                document.querySelector('.nav-hidden').classList.add('visible');
             }
         }
     });
@@ -27,9 +27,10 @@ const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
 // Ensure the project menu section is correctly selected and observed
-const projectSection = document.querySelector('.project-menu');
-if (projectSection) {
+const projectSection = document.querySelector('.hero');
+if (projectSection ) {
     observer.observe(projectSection);
 } else {
     window.alert('Project section not found');
 }
+

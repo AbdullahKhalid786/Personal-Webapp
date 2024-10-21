@@ -1,9 +1,28 @@
 /* style.css */
 
 /* Global Settings */
+/* Scrollbar background */
 ::-webkit-scrollbar {
-    display: none; /* Hide the scrollbar */
+    width: 12px; /* Width of the scrollbar */
 }
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #000; /* Black background */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #333; /* Dark grey color for handle */
+    border-radius: 10px; /* Rounded corners */
+    border: 3px solid #000; /* Padding around the handle, blending with the track */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Lighter grey on hover */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -57,6 +76,12 @@ header ul li a {
     text-decoration: none;
 }
 
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+
 main {
     display: flex;
     flex-flow: column nowrap;
@@ -97,7 +122,7 @@ main {
 }
 
 .heading h1{
-    color: #484848;
+    color: #848282;
     font-size: 50px;
     font-weight: bold;
     font-family: monospace;
@@ -141,7 +166,8 @@ main {
 .about {
     display: flex;
     flex-flow: row;
-    height: 30%;
+
+    height: 20%;
 }
 
 
@@ -225,7 +251,13 @@ main {
     transform: translateX(0);
 }
 
-
+.project-menu.blogs{
+    max-height: 30vh;
+}
+.project-grids.blogs {
+    width: 100%;
+    height: 100%;
+}
 
 /* Projects Section */
 .projects ul {
@@ -267,6 +299,10 @@ main {
     font-size: 2rem;
 }
 
+.blog ul li h2 a{
+    color: #333;
+    text-decoration: none;
+}
 .blog ul li p {
     font-size: 1rem;
     color: #555;
