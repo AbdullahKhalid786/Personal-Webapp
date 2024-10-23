@@ -3,7 +3,7 @@
 /* Global Settings */
 /* Scrollbar background */
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
+    width: 15px; /* Width of the scrollbar */
 }
 
 /* Track (background of the scrollbar) */
@@ -292,15 +292,40 @@ main {
     transform: translateX(0);
 }
 
+
+
+
+/* ----------------------------------------------------------------------------------------------------------------------------------- */
 /* Projects Section */
+.projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.project-list{
+    display: grid;
+    height: 100%;
+    width: 50%;
+}
+.project-item{
+
+    padding: 10px;
+    margin: 10px;
+    background-color: #8fa8f9;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+.project-item:hover{
+    transform: scale(1.01);
+    transition: ease;
+}
 .projects ul {
     list-style: none;
 }
 
-.projects ul li {
-    background-color: hsla(0, 0%, 100%, 0);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
 
 .projects h1 {
     font-size: 2.2rem;
@@ -316,16 +341,48 @@ main {
 }
 
 /* Blog Section */
+
+.blog{
+    display: flex;
+
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+
+}
+
+.blog h1{
+    font-size: xx-large;
+    size: 40px;
+    padding: 10px;
+}
 .blog ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    min-width: 100%;
 }
 
 .blog ul li {
-    background-color: #fff;
+    min-width: 100%;
+    background-color: #747474;
     margin-bottom: 15px;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog ul li:hover{
+    transition: ease;
+    transform: scaleY(1.05);
+    border-color: #e2e2e2;
+    border-radius: 30px;
+
+
 }
 
 .blog ul li h2 {
@@ -333,12 +390,12 @@ main {
 }
 
 .blog ul li h2 a{
-    color: #333;
+    color: #e8e6e6;
     text-decoration: none;
 }
 .blog ul li p {
     font-size: 1rem;
-    color: #555;
+    color: #e2e2e2;
 }
 
 /* Add this to your CSS file */

@@ -2,17 +2,22 @@
 {% extends 'base.html' %}
 
 {% block title %}Projects{% endblock %}
+{% load static %}
 
 {% block content %}
-    <section class="projects">
-        <h1>Projects</h1>
-        <ul>
+    <section class="projects-page">
+        <div class="projects">
+            <h1 class="project-title">PROJECTS</h1>
+        <ul class="project-list">
             {% for project in projects %}
-                <li>
+                <li class="project-item">
+                    <img src="{% static 'stoch.png' %}" alt="">
                     <h2>{{ project.title }}</h2>
                     <p>{{ project.description }}</p>
                 </li>
             {% endfor %}
         </ul>
+        
+        </div>
     </section>
 {% endblock %}
