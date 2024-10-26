@@ -27,7 +27,7 @@ def blog(request):
 # Blog post detail view
 from django.views.decorators.csrf import csrf_exempt
 
-@csrf_exempt  # Temporary for testing only
+@csrf_exempt
 def blog_post_detail(request, post_id):
     post = get_object_or_404(BlogPost, id=post_id)
     option_price = None
@@ -70,6 +70,15 @@ def blog_post_detail(request, post_id):
         'content_with_calculator': content_with_calculator
     })
 
+def project_detail(request, project_id):  # Ensure 'request' is included as the first parameter
+    project = get_object_or_404(Project, id=project_id)
+    # Convert Markdown content to HTML
+    project_content_html = markdown.markdown(project.content, extensions=['fenced_code'])
+
+    return render(request, 'projects/project_detail.html', {  # Ensure you pass 'request' here
+        'project': project,
+        'project_content_html': project_content_html
+    })
 
 def test_csrf(request):
     if request.method == 'POST':

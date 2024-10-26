@@ -10,7 +10,7 @@
         <ul class="project-list">
             {% for project in projects %}
                 <li class="project-item" style="background-image: url('{% if project.background_image %}{{ project.background_image.url }}{% endif %}');">
-                    <h2><a href="/">{{ project.title }}</a></h2>
+                    <h2><a href="{{ project.get_absolute_url }}">{{ project.title }}</a></h2>
                     <p>{{ project.description }}</p>
                 </li>
             {% endfor %}
