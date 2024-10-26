@@ -1,14 +1,15 @@
-# views.py (in your app's folder)
-from django.shortcuts import render
+# views.py
+import markdown
+from django.shortcuts import render, get_object_or_404
 from django.template.loader import render_to_string
 from .models import Project, BlogPost
 from .forms import OptionPriceForm
 from .black_scholes import BlackScholes  # Import your Black-Scholes class
-
 # Home page view
 def home(request):
     posts = BlogPost.objects.all()  # Fetch all blog posts from the database
-    context = {'posts': posts}
+    projects = Project.objects.all()    # Fetch all projects from the database
+    context = {'posts': posts, 'projects': projects}
     return render(request, 'home/home.html', context)
 
 # Projects page view
@@ -24,8 +25,11 @@ def blog(request):
     return render(request, 'blog/blog.html', context)
 
 # Blog post detail view
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt  # Temporary for testing only
 def blog_post_detail(request, post_id):
-    post = BlogPost.objects.get(id=post_id)
+    post = get_object_or_404(BlogPost, id=post_id)
     option_price = None
     option_type = None
     
@@ -49,7 +53,11 @@ def blog_post_detail(request, post_id):
     else:
         form = OptionPriceForm()
     
-    content_with_calculator = post.content.replace(
+    # Convert Markdown content to HTML
+    post_content_html = markdown.markdown(post.content, extensions=['fenced_code'])
+
+    # Replace placeholder with the calculator form HTML
+    content_with_calculator = post_content_html.replace(
         '{{ OPTION_CALCULATOR }}',
         render_to_string('blog/option_calculator.html', {
             'form': form,
@@ -63,5 +71,7 @@ def blog_post_detail(request, post_id):
     })
 
 
-def test_view(request):
-    return render(request, 'test_template.html')
+def test_csrf(request):
+    if request.method == 'POST':
+        return render(request, 'success.html')
+    return render(request, 'test_csrf.html')

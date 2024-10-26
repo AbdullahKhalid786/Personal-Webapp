@@ -39,18 +39,14 @@
     <div class="project-menu">
         <h1><a href="{% url 'projects' %}">PROJECTS</a></h1>
         <div class="project-grids">
-            <div class="logo hidden">
-                <h1>H1</h1>
+            
+            {% for project in projects %}
+            <div class="logo hidden" style="background-image: url('{% if project.background_image %}{{ project.background_image.url }}{% endif %}');">
+                <a class="link-project" href="{{ project.get_absolute_url }}">
+                    <h1>{{ project.title }}</h1>
+                </a>
             </div>
-            <div class="logo hidden">
-                <h1>H1</h1>
-            </div>
-            <div class="logo hidden">
-                <h1>H1</h1>
-            </div>
-            <div class="logo hidden">
-                <h1>H1</h1>
-            </div>
+            {% endfor %}
         </div>
     </div>
 
@@ -58,7 +54,7 @@
         <h1><a href="{% url 'blog' %}">BLOG POSTS</a></h1>
         <div class="project-grids blogs">
             {% for post in posts %}
-                <div class="logo blogs hidden">
+                <div class="logo blogs hidden" style="background-image: url('{% if post.background_image %}{{ post.background_image.url }}{% endif %}');">
                     <a class="link-blog" href="{{ post.get_absolute_url }}">
                         <h1>{{ post.title }}</h1>
                     </a>

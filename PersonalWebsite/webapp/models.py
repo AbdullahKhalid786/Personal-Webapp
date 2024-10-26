@@ -6,6 +6,7 @@ class Project(models.Model):
     title = models.CharField(max_length=200)  # Title of the project
     description = models.TextField()  # Project description
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp for when the project was created
+    background_image = models.ImageField(upload_to='project_backgrounds/', blank=True, null=True)  # Background image
 
     def __str__(self):
         return self.title  # Display the project title in the admin panel
@@ -17,6 +18,7 @@ class BlogPost(models.Model):
     content = models.TextField(default='')  # Full blog content
     created_at = models.DateTimeField(auto_now_add=True)  # Timestamp for when the post was created
     updated_at = models.DateTimeField(auto_now=True)  # Timestamp for when the post was last updated
+    background_image = models.ImageField(upload_to='project_backgrounds/', blank=True, null=True)  # Background image
 
     def __str__(self):
         return self.title  # Display the blog post title in the admin panel

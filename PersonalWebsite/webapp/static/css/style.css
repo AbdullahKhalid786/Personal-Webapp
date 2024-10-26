@@ -23,6 +23,24 @@
     background: #555; /* Lighter grey on hover */
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; /* Regular text */
+    color: #333; /* Dark gray for clean look */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 500; /* Slightly heavier for headers */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);    
+
+}
+
+button, a, nav {
+    font-weight: 500;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -256,6 +274,13 @@ main {
     opacity: 0;
     transform: translateX(-100%);
     transition: opacity 2s, transform 2s;
+    background-size: cover; /* Make sure the image covers the item */
+    background-position: center; /* Center the image */
+}
+
+.link-project{
+    font-weight:bolder;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 .project-menu.blogs{
@@ -267,7 +292,8 @@ main {
 }
 
 .logo.blogs a{
-    color: #333;
+    font-weight:bolder;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
 .link-blog{
@@ -314,35 +340,40 @@ main {
 
 /* ----------------------------------------------------------------------------------------------------------------------------------- */
 /* Projects Section */
-.projects{
+.projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
-.project-list{
+
+.project-list {
     display: grid;
     height: 100%;
     width: 50%;
 }
-.project-item{
 
+.project-item {
+    position: relative; /* Allows for absolute positioning */
     padding: 10px;
     margin: 10px;
     background-color: #8fa8f9;
     width: 100%;
-    height: auto;
+    height: 200px; /* Set a fixed height for visibility */
     border-radius: 10px;
+    background-size: cover; /* Make sure the image covers the item */
+    background-position: center; /* Center the image */
 }
-.project-item:hover{
+
+.project-item:hover {
     transform: scale(1.01);
     transition: ease;
 }
+
 .projects ul {
     list-style: none;
 }
-
 
 .projects h1 {
     font-size: 2.2rem;
@@ -350,12 +381,17 @@ main {
 
 .projects ul li h2 {
     font-size: 2rem;
+    position: relative; /* Keep this on top */
+    z-index: 1; /* Bring the title in front */
 }
 
 .projects ul li p {
     font-size: 1.1rem;
     color: #555;
+    position: relative; /* Keep this on top */
+    z-index: 1; /* Bring the description in front */
 }
+
 
 /* Blog Section */
 
@@ -424,6 +460,93 @@ main {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+/* Blog post container styling */
+.blog-post-detail {
+    line-height: 1.8;
+    padding: 40px;
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Georgia', serif;
+    color: #333;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+.blog-post-detail h1, .blog-post-detail h2, .blog-post-detail h3 {
+    color: #333;
+    margin: 0 0 20px;
+    font-weight: bold;
+}
+
+.blog-post-detail h1 {
+    font-size: 2.4em;
+    color: #222;
+}
+
+.blog-post-detail h2 {
+    font-size: 1.8em;
+    color: #444;
+}
+
+.blog-post-detail h3 {
+    font-size: 1.5em;
+    color: #666;
+}
+
+/* Paragraph styling */
+.blog-post-detail p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Links styling */
+.blog-post-detail a {
+    color: #0077cc;
+    text-decoration: none;
+}
+
+.blog-post-detail a:hover {
+    color: #005ea2;
+    text-decoration: underline;
+}
+
+/* Images */
+.blog-post-detail img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+/* Math and code blocks */
+.blog-post-detail .math-block,
+.blog-post-detail pre, 
+.blog-post-detail code {
+    background: #eee;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* Additional padding for inner content */
+.blog-post-detail div {
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Spacing between sections */
+.blog-post-detail > * + * {
+    margin-top: 20px;
+}
+
 
 
 /* Footer */

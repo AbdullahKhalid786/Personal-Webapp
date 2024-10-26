@@ -1,16 +1,25 @@
 <!-- blog_post_detail.html -->
 {% extends 'base.html' %}
 
-
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <section class="blog-post-detail">
-        <h1>{{ post.title }}</h1>
-        <p>Published on {{ post.created_at }}</p>
-        <div>
-            {% csrf_token %}    
-            {{ content_with_calculator|safe }}
-        </div>
-    </section>
+<section class="blog-post-detail">
+    <h1>{{ post.title }}</h1>
+    <p>Published on {{ post.created_at }}</p>
+    <div>
+        {{ content_with_calculator|safe }}
+    </div>
+</section>
+
+<!-- Load MathJax for LaTeX rendering -->
+<script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        }
+    };
+</script>
 {% endblock %}
