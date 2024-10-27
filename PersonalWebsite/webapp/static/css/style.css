@@ -276,6 +276,8 @@ main {
     transition: opacity 2s, transform 2s;
     background-size: cover; /* Make sure the image covers the item */
     background-position: center; /* Center the image */
+    border: 2px solid rgb(161, 141, 243);
+    
 }
 
 .link-project{
@@ -296,12 +298,25 @@ main {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
 }
 
+.logo.blogs{
+    max-width: 40%;
+}
+
 .link-blog{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
-    width: 100%;
+    max-width: 50%;
+}
+
+.link-blog h1{
+    max-width: 100%;            /* Limit the width to prevent overflow */
+    word-wrap: break-word;      /* Force long words to wrap */
+    text-align: center;         /* Center-align the text */          /* Adjust as needed for readability */
+    overflow-wrap: break-word;  /* Ensure overflow words break correctly */
+    white-space: normal;        /* Allow line breaks */
+    margin: 0;                  /* Reset margin if needed */
 }
 
 /* Transition delays for logos */
