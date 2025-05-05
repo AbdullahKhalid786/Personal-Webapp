@@ -12,11 +12,15 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
-
+from decouple import config, Csv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+SECRET_KEY = config('SECRET_KEY')  
+DEBUG      = config('DEBUG', cast=bool)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -24,13 +28,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(cvxk&$&($&acer87l1)a%8a31_n_0v#hz(i**pfs606$re96j'
+# redirect all HTTP → HTTPS
+SECURE_SSL_REDIRECT   = True       # W008 :contentReference[oaicite:2]{index=2}
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# secure cookies only over HTTPS
+SESSION_COOKIE_SECURE = True       # W012 :contentReference[oaicite:3]{index=3}
+CSRF_COOKIE_SECURE    = True
 
-ALLOWED_HOSTS = []
+# HSTS: tell browsers to always use HTTPS
+SECURE_HSTS_SECONDS           = 60   # W004; start low (60s), ramp up once you’re sure :contentReference[oaicite:4]{index=4}
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD            = True
+
+ALLOWED_HOSTS = [
+    'abdullahkhalid.onrender.com',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -76,6 +89,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'personal_website.wsgi.application'
 
+#CSRF stuff
+# Only send CSRF cookie over HTTPS
+CSRF_COOKIE_SECURE = True      
+
+# Prevent JavaScript from reading the CSRF cookie
+CSRF_COOKIE_HTTPONLY = True    
+
+# Use “Lax” or “Strict” SameSite to block cross-site sending
+CSRF_COOKIE_SAMESITE = 'Lax'    
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
